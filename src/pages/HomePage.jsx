@@ -4,15 +4,14 @@ import AuthProvider from '../provider/AuthProvider.jsx';
 
 const HomePage = () => {
     return (
-        <div>
-            <AuthProvider>
-                <Header />
-            </AuthProvider>
+        <AuthProvider>
             <div>
-
+                <Header />
+                <div>
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </AuthProvider>
     );
 }
 

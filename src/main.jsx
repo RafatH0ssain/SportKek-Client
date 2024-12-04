@@ -15,6 +15,7 @@ import AllEquipment from './pages/AllEquipment.jsx';
 import EquipmentDetails from './pages/EquipmentDetails.jsx';
 import MyEquipmentList from './pages/MyEquipmentList.jsx';
 import UpdateEquipment from './pages/UpdateEquipment.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/",
+    path: "/addEquipment/:id",
     element: <PrivateRoute>
       <AddEquipment />
     </PrivateRoute>,
@@ -73,6 +74,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )

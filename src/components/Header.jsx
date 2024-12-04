@@ -3,7 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
 
     return (
         <div className="mb-10">
