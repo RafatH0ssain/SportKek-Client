@@ -8,6 +8,12 @@ const HomePage = () => {
             <div>
                 <Header />
                 <div>
+                    {/* Slider */}
+
+
+                    {/* Product Section */}
+
+                    {/* Sports CAtegories */}
                 </div>
                 <Footer />
             </div>

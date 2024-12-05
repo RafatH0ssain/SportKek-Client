@@ -18,8 +18,12 @@ const AuthProvider = ({ children }) => {
 
     const userLogin = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password);
-    }
+        return signInWithEmailAndPassword(auth, email, password)
+            .catch((error) => {
+                setLoading(false);  // Important
+            });
+    };
+    
 
     const logOut = () => {
         setLoading(true);
