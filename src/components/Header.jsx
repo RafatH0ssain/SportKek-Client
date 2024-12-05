@@ -6,8 +6,8 @@ const Header = () => {
     const { user, logOut, loading } = useContext(AuthContext);
 
     return (
-        <div className="mb-10">
-            <div className="navbar bg-base-100">
+        <div className="pb-10 bg-white p-5 text-black">
+            <div className="navbar bg-white pb-5">
                 <div className="flex-1">
                     <a className="lg:text-6xl md:text-4xl text-2xl md:font-extrabold font-bold">SportKek</a>
                 </div>
@@ -40,18 +40,19 @@ const Header = () => {
                         {user && user?.email ? (
                             <button onClick={logOut} className="btn btn-neutral rounded-none">Log Out</button>
                         ) : (
-                            <Link to="/auth/login" className="btn btn-neutral rounded-xl">Login</Link>
+                            <Link to="/auth/login" className="btn bg-black text-white rounded-xl">Login</Link>
                         )}
                     </div>
                 </div>
             </div>
-            <ul className="menu menu-horizontal bg-base-200">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-                <li><a>Item 3</a></li>
-            </ul>
+            <hr class="border-t-2 border-black" />
+            <div className="menu menu-horizontal bg-white w-full flex justify-around">
+                <Link className='w-1/6 hover:bg-base-300 border-black border-2 h-10 items-center justify-center flex rounded-xl lg:text-2xl md:text-xl text-l font-bold py-6' to={"/"}><a>Home</a></Link>
+                <Link className='w-1/6 hover:bg-base-300 h-10 border-black border-2 items-center justify-center flex rounded-xl lg:text-2xl md:text-xl text-l font-bold py-6' to={'/equipment'}><a>All Equipment</a></Link>
+                <Link className='w-1/6 hover:bg-base-300 border-black border-2 h-10 items-center justify-center flex rounded-xl lg:text-2xl md:text-xl text-l font-bold py-6' to={'/addequipment'}><a>Add Equipment</a></Link>
+            </div>
+            <hr class="border-t-2 border-black" />
         </div>
     );
 }
-
 export default Header;

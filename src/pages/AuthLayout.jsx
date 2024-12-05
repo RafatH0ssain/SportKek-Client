@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const AuthLayout = () => {
     return (
-        <div className="p-5 font-poppins bg-gray-300">
-            <header className="*:bg-inherit">
-                <Header/>
-            </header>
+        <div>
+            <Header />
             <Outlet />
+            <Footer />
         </div>
     );
 };
