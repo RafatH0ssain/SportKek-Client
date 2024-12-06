@@ -21,7 +21,14 @@ import AuthProvider from './provider/AuthProvider.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage></HomePage>,
+    element: <HomePage />,
+    loader: async () => {
+      const response = await fetch('http://localhost:5000/equipment');
+      if (!response.ok) {
+        throw new Error("Failed to fetch equipment data");
+      }
+      return response.json();
+    }
   },
   {
     path: '/auth',
@@ -52,7 +59,7 @@ const router = createBrowserRouter([
     element: <PrivateRoute>
       <EquipmentDetails />
     </PrivateRoute>,
-    loader: ({ params }) => fetch(``),
+    // loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params._id}`),
   },
   {
     path: "/myList",
