@@ -1,47 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useContext } from "react";
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { AuthContext } from "../provider/AuthProvider";
 
-
 const AddEquipment = () => {
-    const { user } = useContext(AuthContext);
+    const { userDetails } = useContext(AuthContext);
 
     const [formData, setFormData] = useState({
-        image: '',
-        itemName: '',
-        categoryName: '',
-        description: '',
-        price: '',
-        rating: '',
-        customization: '',
-        processingTime: '',
-        stockStatus: '',
-        userEmail: user.userEmail,
-        userName: user.userName
+        image: "",
+        itemName: "",
+        categoryName: "",
+        description: "",
+        price: "",
+        rating: "",
+        customization: "",
+        processingTime: "",
+        stockStatus: "",
+        userEmail: userDetails?.userEmail || "",
+        userName: userDetails?.userName || "",
     });
 
-    // Handle input change
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+        setFormData({ ...formData, [name]: value });
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
-            const response = await fetch('http://localhost:5000/addEquipment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            const response = await fetch("http://localhost:5000/addEquipment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
 
@@ -50,24 +39,24 @@ const AddEquipment = () => {
             if (response.ok) {
                 alert(result.message);
                 setFormData({
-                    image: '',
-                    itemName: '',
-                    categoryName: '',
-                    description: '',
-                    price: '',
-                    rating: '',
-                    customization: '',
-                    processingTime: '',
-                    stockStatus: '',
-                    userEmail: user.userEmail,
-                    userName: user.userName,
+                    image: "",
+                    itemName: "",
+                    categoryName: "",
+                    description: "",
+                    price: "",
+                    rating: "",
+                    customization: "",
+                    processingTime: "",
+                    stockStatus: "",
+                    userEmail: "",
+                    userName: "",
                 });
             } else {
-                alert('Error: ' + result.error);
+                alert("Error: " + result.error);
             }
         } catch (error) {
-            alert('Error submitting the form: ' + error.message);
-            console.error('Error submitting form data:', error);
+            alert("Error submitting the form: " + error.message);
+            console.error(error);
         }
     };
 
@@ -76,7 +65,9 @@ const AddEquipment = () => {
             <Header />
             <div className="bg-white">
                 <form className="space-y-4 w-3/4 mx-auto py-5" onSubmit={handleSubmit}>
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-black underline">Add an Equipment:</h1>
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-black underline">
+                        Add an Equipment:
+                    </h1>
 
                     <label className="input input-bordered flex items-center gap-2">
                         Image

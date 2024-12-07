@@ -1,61 +1,68 @@
 import { createContext, useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import app from '../firebaseConfig';
+import app from "../firebaseConfig";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [userDetails, setUserDetails] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (email, password) => {
+    const createUser = async (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password);
+        return await createUserWithEmailAndPassword(auth, email, password);
     };
 
-    const userLogin = (email, password) => {
+    const userLogin = async (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)
-            .catch((error) => {
-                setLoading(false);
-            });
+        return await signInWithEmailAndPassword(auth, email, password).catch(() => {
+            setLoading(false);
+        });
     };
 
-    const logOut = () => {
+    const logOut = async () => {
         setLoading(true);
-        return signOut(auth);
+        return await signOut(auth);
     };
 
-    const updateUserProfile = (updatedData) => {
-        return updateProfile(auth.currentUser, updatedData);
+    const updateUserProfile = async (updatedData) => {
+        return await updateProfile(auth.currentUser, updatedData);
     };
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            if (currentUser) {
+                setUser(currentUser); // Keeps full user object for Firebase logic
+                setUserDetails({
+                    userEmail: currentUser.email,
+                    userName: currentUser.displayName || "Anonymous",
+                });
+            } else {
+                setUser(null);
+                setUserDetails(null);
+            }
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     const authInfo = {
-        user, // Expose logged-in user object
-        userEmail: user?.email || null, // Explicit logged-in user's email
+        user,
+        userDetails,
         setUser,
         createUser,
         logOut,
         userLogin,
-        setLoading,
         loading,
-        updateUserProfile
+        updateUserProfile,
     };
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currUser) => {
-            setUser(currUser);
-            setLoading(false);
-        });
-        return () => {
-            unsubscribe();
-        };
-    }, []);
-
     return (
-        <AuthContext.Provider value={{ user, setUser }}>
-            {children}
+        <AuthContext.Provider value={authInfo}>
+            {!loading ? children : <div>Loading...</div>}
         </AuthContext.Provider>
     );
 };
