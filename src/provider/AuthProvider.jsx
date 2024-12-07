@@ -1,13 +1,11 @@
-import { createContext, useEffect } from "react";
-import { useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import app from '../firebaseConfig';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -20,10 +18,9 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
             .catch((error) => {
-                setLoading(false);  // Important
+                setLoading(false);
             });
     };
-    
 
     const logOut = () => {
         setLoading(true);
@@ -35,7 +32,8 @@ const AuthProvider = ({ children }) => {
     };
 
     const authInfo = {
-        user,
+        user, // Expose logged-in user object
+        userEmail: user?.email || null, // Explicit logged-in user's email
         setUser,
         createUser,
         logOut,
@@ -55,7 +53,11 @@ const AuthProvider = ({ children }) => {
         };
     }, []);
 
-    return (<AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>);
+    return (
+        <AuthContext.Provider value={{ user, setUser }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };
 
 export default AuthProvider;

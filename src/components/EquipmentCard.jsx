@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const EquipmentCard = ({ equipment }) => {
+
+    const [equipments, setEquipment] = useState(equipment);
+
     useEffect(() => {
-        setEquipment(loadedEquipment);
-    }, [loadedEquipment]);
+        setEquipment(equipment);
+    }, [equipment]);
 
     const {
         _id,
@@ -37,7 +40,7 @@ const EquipmentCard = ({ equipment }) => {
                 <p className={`text-sm ${stockStatus > 0 ? "text-green-500" : "text-red-500"}`}>
                     Stock Status: {stockStatus > 0 ? `${stockStatus} available` : "Out of Stock"}
                 </p>
-                <Link className="text-sm text-gray-800" to={`/equipment/${_id}`}>Learn More</Link>
+                <Link className="text-sm text-gray-800" to={`/equipment/${equipment._id}`}>Learn More</Link>
             </div>
             <div className="px-6 pt-4 pb-2">
                 <p className="text-gray-500 text-sm">Posted by: {userName}</p>

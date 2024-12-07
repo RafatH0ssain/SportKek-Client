@@ -23,12 +23,26 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePage />,
     loader: async () => {
-      const response = await fetch('http://localhost:5000/equipment');
-      if (!response.ok) {
-        throw new Error("Failed to fetch equipment data");
+      try {
+        const response = await Promise.all([
+          fetch('http://localhost:5000/equipment'),
+          fetch('http://localhost:5000/categories')
+        ]);
+
+        if (!response[0].ok || !response[1].ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        return {
+          equipments: await response[0].json(),
+          categories: await response[1].json(),
+        };
+      } catch (error) {
+        console.error("Error fetching loader data:", error);
+        return { equipments: [], categories: [] };
       }
-      return response.json();
     }
+
   },
   {
     path: '/auth',
@@ -46,26 +60,64 @@ const router = createBrowserRouter([
   },
   {
     path: "/addEquipment",
-    element: <PrivateRoute>
-      <AddEquipment />
-    </PrivateRoute>,
+    element:
+      <PrivateRoute>
+        <AddEquipment />
+      </PrivateRoute>,
   },
   {
     path: "/equipment",
     element: <AllEquipment></AllEquipment>,
+    loader: async () => {
+      try {
+        const response = await Promise.all([
+          fetch('http://localhost:5000/equipment'),
+        ]);
+
+        if (!response[0].ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        return {
+          equipments: await response[0].json(),
+        };
+      } catch (error) {
+        console.error("Error fetching loader data:", error);
+        return { equipments: [] };
+      }
+    }
+
   },
   {
     path: "/equipment/:id",
     element: <PrivateRoute>
       <EquipmentDetails />
     </PrivateRoute>,
-    // loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params._id}`),
+    loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params._id}`),
   },
   {
     path: "/myList",
     element: <PrivateRoute>
       <MyEquipmentList />
     </PrivateRoute>,
+    loader: async () => {
+      try {
+        const response = await Promise.all([
+          fetch('http://localhost:5000/equipment'),
+        ]);
+
+        if (!response[0].ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        return {
+          equipments: await response[0].json(),
+        };
+      } catch (error) {
+        console.error("Error fetching loader data:", error);
+        return { equipments: [] };
+      }
+    }
   },
   {
     path: "/update/:id",
