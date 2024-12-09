@@ -22,7 +22,7 @@ const UpdateEquipment = () => {
 
     // Fetch the existing equipment data
     useEffect(() => {
-        fetch(`http://localhost:5000/equipment/${id}`)
+        fetch(`https://sport-kek-server.vercel.app/equipment/${id}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch equipment data");
@@ -59,7 +59,7 @@ const UpdateEquipment = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/equipment/${id}`, {
+        fetch(`https://sport-kek-server.vercel.app/equipment/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),

@@ -28,7 +28,7 @@ const AddEquipment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:5000/addEquipment", {
+            const response = await fetch("https://sport-kek-server.vercel.app/addEquipment", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

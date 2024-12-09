@@ -10,7 +10,7 @@ const EquipmentDetails = () => {
     useEffect(() => {
         const fetchEquipmentDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/equipment/${id}`);
+                const response = await fetch(`https://sport-kek-server.vercel.app/equipment/${id}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch equipment details");
                 }

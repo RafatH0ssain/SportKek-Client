@@ -19,7 +19,7 @@ const MyEquipmentCard = ({ equipment, onDelete }) => {
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/equipment/${_id}`, {
+        fetch(`https://sport-kek-server.vercel.app/equipment/${_id}`, {
             method: "DELETE",
         })
             .then((response) => {

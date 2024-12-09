@@ -25,8 +25,8 @@ const router = createBrowserRouter([
     loader: async () => {
       try {
         const response = await Promise.all([
-          fetch('http://localhost:5000/equipment'),
-          fetch('http://localhost:5000/categories')
+          fetch('https://sport-kek-server.vercel.app/equipment'),
+          fetch('https://sport-kek-server.vercel.app/categories')
         ]);
 
         if (!response[0].ok || !response[1].ok) {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
     loader: async () => {
       try {
         const response = await Promise.all([
-          fetch('http://localhost:5000/equipment'),
+          fetch('https://sport-kek-server.vercel.app/equipment'),
         ]);
 
         if (!response[0].ok) {
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
     element: <PrivateRoute>
       <EquipmentDetails />
     </PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params._id}`),
+    loader: ({ params }) => fetch(`https://sport-kek-server.vercel.app/equipment/${params._id}`),
   },
   {
     path: "/myList",
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
     loader: async () => {
       try {
         const response = await Promise.all([
-          fetch('http://localhost:5000/equipment'),
+          fetch('https://sport-kek-server.vercel.app/equipment'),
         ]);
 
         if (!response[0].ok) {
@@ -124,7 +124,7 @@ const router = createBrowserRouter([
     element: <PrivateRoute>
       <UpdateEquipment />
     </PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/equipment/${params._id}`),
+    loader: ({ params }) => fetch(`https://sport-kek-server.vercel.app/equipment/${params._id}`),
   },
   {
     path: "*",
