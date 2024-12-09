@@ -75,7 +75,7 @@ const AddEquipment = () => {
                             name="image"
                             value={formData.image}
                             onChange={handleChange}
-                            type="url"
+                            type="text"
                             className="grow"
                             placeholder="Enter image URL"
                         />

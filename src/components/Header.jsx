@@ -9,7 +9,7 @@ const Header = () => {
         <div className="pb-10 bg-white p-5 text-black">
             <div className="navbar bg-white pb-5">
                 <div className="flex-1">
-                    <Link className="lg:text-6xl md:text-4xl text-2xl md:font-extrabold font-bold">SportKek</Link>
+                    <Link className="lg:text-6xl md:text-4xl text-2xl md:font-extrabold font-bold" to={'/'}>SportKek</Link>
                 </div>
                 <div className="flex-none w-1/4 justify-around items-center">
                     <div className="w-5/6 login flex justify-around items-center">

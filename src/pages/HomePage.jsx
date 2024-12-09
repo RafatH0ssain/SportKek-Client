@@ -26,34 +26,26 @@ const HomePage = () => {
                 {/* Slider */}
                 <div className="flex w-full bg-white">
                     <div className="carousel carousel-center rounded-box w-11/12 mx-auto">
-                        <div className="carousel-item">
-                            <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/wL6CbGj/skates1.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img
-                                src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
-                                alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/GPDj3hx/tennis-Racket1.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img
-                                src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
-                                alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/ZXHR9fg/bike-Goggles.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img
-                                src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
-                                alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/pwDyghy/cricekt-Bat2.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp" alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/b697N73/ball1.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp" alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/qj3jdRg/ball4.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
-                        <div className="carousel-item">
-                            <img
-                                src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
-                                alt="Pizza" />
+                        <div className="carousel-item w-[300px] h-[300px">
+                            <img src="https://i.ibb.co/VLTY2TH/baseball-Bat1.jpg" alt="Pizza" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
