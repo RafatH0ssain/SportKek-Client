@@ -17,7 +17,7 @@ const Footer = () => {
                     <h6 className="footer-title">Company</h6>
                     <a className="link link-hover" href="#about-us">About us</a>
                     <a className="link link-hover" href="#contact-us">Contact</a>
-                    <a className="link link-hover" href="">XXXXXXTBD</a>
+                    <a className="link link-hover" href="https://www.youtube.com/watch?v=B9synWjqBn8&ab_channel=TravisScottVEVO" target="_blank">Collaborate</a>
                 </nav>
                 <nav className="flex flex-col items-center justify-center w-1/4">
                     <h6 className="footer-title">Socials</h6>

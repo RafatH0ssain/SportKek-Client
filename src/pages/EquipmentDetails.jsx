@@ -38,7 +38,7 @@ const EquipmentDetails = () => {
             <div className="max-w-5xl mx-auto my-10">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                     <img
-                        src={`http://localhost:5000/images/${equipment.image}`}
+                        src={`${equipment.image}`}
                         alt={equipment.itemName}
                         className="w-full md:w-1/2 rounded-lg shadow-lg"
                     />
