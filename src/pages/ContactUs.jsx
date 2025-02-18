@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const ContactUs = () => {
     return (
-        <div className="bg-black text-white py-12">
+        <div className="bg-gray-100 text-black py-12 w-11/12 mx-auto">
             <div className="container mx-auto px-4">
                 {/* Heading */}
-                <h1 className="text-4xl font-bold text-center text-white mb-6">
+                <h1 className="text-4xl font-bold text-center mb-6">
                     Contact Us
                 </h1>
-                <p className="text-lg text-center text-gray-400 mb-10">
+                <p className="text-lg text-center text-gray-900 mb-10">
                     We're here to assist you! Reach out to us anytime, and we’ll get back
                     to you as soon as possible.
                 </p>
@@ -17,15 +17,15 @@ const ContactUs = () => {
                 {/* Contact Form and Information */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     {/* Contact Form */}
-                    <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-bold mb-4 text-white">
+                    <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
+                        <h2 className="text-2xl font-bold mb-4">
                             Send Us a Message
                         </h2>
                         <form className="space-y-4">
                             <div>
                                 <label
                                     htmlFor="name"
-                                    className="block text-sm font-semibold text-gray-400 mb-1"
+                                    className="block text-sm font-semibold text-gray-800 mb-1"
                                 >
                                     Full Name
                                 </label>
@@ -39,7 +39,7 @@ const ContactUs = () => {
                             <div>
                                 <label
                                     htmlFor="email"
-                                    className="block text-sm font-semibold text-gray-400 mb-1"
+                                    className="block text-sm font-semibold text-gray-800 mb-1"
                                 >
                                     Email Address
                                 </label>
@@ -53,7 +53,7 @@ const ContactUs = () => {
                             <div>
                                 <label
                                     htmlFor="message"
-                                    className="block text-sm font-semibold text-gray-400 mb-1"
+                                    className="block text-sm font-semibold text-gray-800 mb-1"
                                 >
                                     Message
                                 </label>
@@ -74,43 +74,43 @@ const ContactUs = () => {
                     </div>
 
                     {/* Contact Information */}
-                    <div id="contact-us">
-                        <h2 className="text-2xl font-bold mb-4 text-white">Get in Touch</h2>
-                        <p className="text-gray-400 mb-6">
+                    <div id="contact-us my-10">
+                        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+                        <p className="text-gray-900 mb-6">
                             Have questions or need support? Feel free to contact us using the
                             details below.
                         </p>
                         <div className="space-y-4">
                             <div>
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-lg font-semibold">
                                     📍 Address
                                 </h3>
-                                <p className="text-gray-400">
+                                <p className="text-gray-900">
                                     123 Sport Avenue, Athletics City, World 2023
                                 </p>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-lg font-semibold">
                                     📞 Phone
                                 </h3>
-                                <p className="text-gray-400">+1 (234) 567-890</p>
+                                <p className="text-gray-900">+1 (234) 567-890</p>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-lg font-semibold">
                                     ✉️ Email
                                 </h3>
-                                <p className="text-gray-400">support@sportkek.com</p>
+                                <p className="text-gray-900">support@sportkek.com</p>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-lg font-semibold">
                                     🌐 Social Media
                                 </h3>
-                                <div className="flex space-x-4 mt-2">
+                                <div className="mx-5 mt-2">
                                     <a
                                         href="https://facebook.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-500 hover:underline"
+                                        className="text-blue-500 hover:underline block"
                                     >
                                         Facebook
                                     </a>
@@ -118,7 +118,7 @@ const ContactUs = () => {
                                         href="https://twitter.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-500 hover:underline"
+                                        className="text-blue-500 hover:underline block"
                                     >
                                         Twitter
                                     </a>
@@ -126,7 +126,7 @@ const ContactUs = () => {
                                         href="https://instagram.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-500 hover:underline"
+                                        className="text-blue-500 hover:underline block"
                                     >
                                         Instagram
                                     </a>

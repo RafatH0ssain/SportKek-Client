@@ -5,7 +5,7 @@ const AboutUs = () => {
         <div className="bg-gray-100 py-12" id="about-us">
             <div className="container mx-auto px-4">
                 {/* Heading */}
-                <h1 className="text-4xl font-extrabold text-center text-black mb-6">
+                <h1 className="text-5xl font-extrabold text-center mt-10 text-black mb-6">
                     About Us
                 </h1>
                 <p className="text-lg text-center text-gray-700 mb-10">
@@ -14,9 +14,9 @@ const AboutUs = () => {
                 </p>
 
                 {/* Mission and Vision Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center md:w-11/12 w-full mx-auto">
                     {/* Mission */}
-                    <div className="bg-white shadow-lg rounded-lg p-6">
+                    <div className="bg-white shadow-lg rounded-xl p-6">
                         <h2 className="text-2xl font-bold text-black mb-4">Our Mission</h2>
                         <p className="text-gray-600">
                             At <span className="font-semibold">SportKek</span>, we are dedicated
@@ -27,7 +27,7 @@ const AboutUs = () => {
                     </div>
 
                     {/* Vision */}
-                    <div className="bg-white shadow-lg rounded-lg p-6">
+                    <div className="bg-white shadow-lg rounded-xl p-6">
                         <h2 className="text-2xl font-bold text-black mb-4">Our Vision</h2>
                         <p className="text-gray-600">
                             We envision a world where everyone has access to premium sports gear
@@ -39,7 +39,7 @@ const AboutUs = () => {
                 </div>
 
                 {/* About SportKek */}
-                <div className="mt-12 text-center">
+                <div className="mt-16 text-center">
                     <h2 className="text-3xl font-bold text-black mb-4">
                         Why Choose SportKek?
                     </h2>

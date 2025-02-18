@@ -40,7 +40,7 @@ const EquipmentDetails = () => {
                     <img
                         src={`${equipment.image}`}
                         alt={equipment.itemName}
-                        className="w-full md:w-1/2 rounded-lg shadow-lg"
+                        className="w-full md:w-1/2 rounded-lg shadow-lg bg-white"
                     />
                     <div className="md:w-1/2">
                         <h2 className="text-4xl font-bold mb-4">{equipment.itemName}</h2>

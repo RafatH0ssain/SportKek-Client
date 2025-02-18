@@ -69,4 +69,4 @@ To get started with the client-side code of SportKek, follow the instructions be
     ```
 
 ## Get in touch:
-[Email Me](mailto:rafathossain@example.com)
+[Email Me](mailto:rafat.click.hossain@gmail.com)

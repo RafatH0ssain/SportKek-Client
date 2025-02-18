@@ -26,7 +26,7 @@ const EquipmentCard = ({ equipment }) => {
 
     return (
         <div className="max-w-sm rounded-3xl overflow-hidden shadow-lg bg-white">
-            <img className="w-full h-48 object-cover" src={image} alt={itemName} />
+            <img className="w-full h-48 object-cover bg-white" src={image} alt={itemName} />
             <div className="px-6 py-4">
                 <div className="font-bold md:text-2xl text-xl mb-2 text-center">
                     <h2 className="text-center">{itemName}</h2>

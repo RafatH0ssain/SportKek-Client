@@ -11,25 +11,25 @@ const Register = () => {
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get("name");
-        // if (name.length < 5) {
-        //     setError({ ...error, name: "Name must be more than 5 characters long!" });
-        //     return;
-        // }
+        if (name.length < 5) {
+            setError({ ...error, name: "Name must be more than 5 characters long!" });
+            return;
+        }
         const email = form.get("email");
-        // // Simple email validation regex
-        // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        // if (!emailRegex.test(email)) {
-        //     setError({ ...error, email: "Please enter a valid email address!" });
-        //     return;
-        // }
+        // Simple email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError({ ...error, email: "Please enter a valid email address!" });
+            return;
+        }
 
         const photo = form.get("photo");
-        // // Simple URL validation regex
-        // const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-        // if (!urlRegex.test(photo)) {
-        //     setError({ ...error, photo: "Please enter a valid URL!" });
-        //     return;
-        // }
+        // Simple URL validation regex
+        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+        if (!urlRegex.test(photo)) {
+            setError({ ...error, photo: "Please enter a valid URL!" });
+            return;
+        }
         const password = form.get("password");
         if (password.length < 5) {
             setError({ ...error, name: "Password must be more than 6 characters long!" });

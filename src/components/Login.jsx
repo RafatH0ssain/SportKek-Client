@@ -11,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // This prevents the default form submit action (page reload)
+        e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
