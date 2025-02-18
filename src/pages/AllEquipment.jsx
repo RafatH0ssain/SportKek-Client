@@ -24,10 +24,10 @@ const AllEquipment = () => {
 
     return (
         <AuthProvider>
-            <div>
+            <div className="bg-gray-100 text-black">
                 <Header />
-                <div className="px-4 py-10">
-                    <h2 className="text-3xl font-bold text-center mb-6">All Sports Equipment</h2>
+                <div className="mx-auto w-11/12 py-5 bg-gray-10 pb-32">
+                    <h2 className="text-3xl font-bold text-center mb-6 bg-gray-100">All Sports Equipment</h2>
                     {equipments.length > 0 ? (
                         <table className="min-w-full table-auto border-collapse">
                             <thead>
@@ -46,7 +46,7 @@ const AllEquipment = () => {
                                         <td className="px-4 py-2">{equipment.price} USD</td>
                                         <td className="px-4 py-2">
                                             <Link to={`/equipment/${equipment._id}`} className="text-blue-500 hover:text-blue-700">
-                                                View Details
+                                                Details
                                             </Link>
                                         </td>
                                     </tr>
