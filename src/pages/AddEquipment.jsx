@@ -63,25 +63,25 @@ const AddEquipment = () => {
     return (
         <div>
             <Header />
-            <div className="bg-white">
+            <div className="bg-gray-100 pb-10">
                 <form className="space-y-4 w-3/4 mx-auto py-5" onSubmit={handleSubmit}>
                     <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-black underline">
                         Add an Equipment:
                     </h1>
 
-                    <label className="input input-bordered flex items-center gap-2">
+                    <label className="input input-bordered flex items-center gap-2 bg-white border-black">
                         Image
                         <input
                             name="image"
                             value={formData.image}
                             onChange={handleChange}
                             type="text"
-                            className="grow"
-                            placeholder="Enter image URL"
+                            className="grow bg-white"
+                            placeholder="Enter Image URL"
                         />
                     </label>
 
-                    <label className="input input-bordered flex items-center gap-2">
+                    <label className="input input-bordered flex items-center gap-2 bg-white border-black">
                         Item Name
                         <input
                             name="itemName"
@@ -89,11 +89,11 @@ const AddEquipment = () => {
                             onChange={handleChange}
                             type="text"
                             className="grow"
-                            placeholder="Enter item name"
+                            placeholder="Enter Item Name"
                         />
                     </label>
 
-                    <label className="input input-bordered flex items-center gap-2">
+                    <label className="input input-bordered flex items-center gap-2 bg-white border-black">
                         Category Name
                         <input
                             name="categoryName"
@@ -101,85 +101,87 @@ const AddEquipment = () => {
                             onChange={handleChange}
                             type="text"
                             className="grow"
-                            placeholder="Enter category name"
+                            placeholder="Enter Category"
                         />
                     </label>
 
-                    <label className="input input-bordered flex items-center gap-2">
+                    <label className="input input-bordered flex items-center gap-2 bg-white border-black">
                         Description
-                        <textarea
+                        <input
                             name="description"
                             value={formData.description}
                             onChange={handleChange}
-                            className="grow"
-                            placeholder="Enter item description"
-                        />
-                    </label>
-
-                    <label className="input input-bordered flex items-center gap-2">
-                        Price
-                        <input
-                            name="price"
-                            value={formData.price}
-                            onChange={handleChange}
-                            type="number"
-                            className="grow"
-                            placeholder="Enter price"
-                        />
-                    </label>
-
-                    <label className="input input-bordered flex items-center gap-2">
-                        Rating
-                        <input
-                            name="rating"
-                            value={formData.rating}
-                            onChange={handleChange}
-                            type="number"
-                            className="grow"
-                            placeholder="Enter rating"
-                            min="1"
-                            max="5"
-                            step="0.1"
-                        />
-                    </label>
-
-                    <label className="input input-bordered flex items-center gap-2">
-                        Customization
-                        <input
-                            name="customization"
-                            value={formData.customization}
-                            onChange={handleChange}
                             type="text"
                             className="grow"
-                            placeholder="e.g., Extra grip, Hit paper"
+                            placeholder="Enter Description"
                         />
                     </label>
 
-                    <label className="input input-bordered flex items-center gap-2">
-                        Processing Time
-                        <input
-                            name="processingTime"
-                            value={formData.processingTime}
-                            onChange={handleChange}
-                            type="text"
-                            className="grow"
-                            placeholder="Enter delivery time"
-                        />
-                    </label>
+                    <div className="flex justify-between gap-5">
+                        <label className="input input-bordered flex items-center gap-2 bg-white w-1/2 border-black">
+                            Customization
+                            <input
+                                name="customization"
+                                value={formData.customization}
+                                onChange={handleChange}
+                                type="text"
+                                className="grow"
+                                placeholder="e.g., Extra grip, Hit paper"
+                            />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-2 w-1/2 bg-white border-black">
+                            Processing Time
+                            <input
+                                name="processingTime"
+                                value={formData.processingTime}
+                                onChange={handleChange}
+                                type="text"
+                                className="grow"
+                                placeholder="Enter Delivery Time"
+                            />
+                        </label>
+                    </div>
 
-                    <label className="input input-bordered flex items-center gap-2">
-                        Stock Status
-                        <input
-                            name="stockStatus"
-                            value={formData.stockStatus}
-                            onChange={handleChange}
-                            type="number"
-                            className="grow"
-                            placeholder="Enter available quantity"
-                        />
-                    </label>
+                    <div className="flex gap-5 justify-between">
+                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                            Price
+                            <input
+                                name="price"
+                                value={formData.price}
+                                onChange={handleChange}
+                                type="number"
+                                className="grow"
+                                placeholder="Enter Price"
+                            />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                            Rating
+                            <input
+                                name="rating"
+                                value={formData.rating}
+                                onChange={handleChange}
+                                type="number"
+                                className="grow"
+                                placeholder="Enter Rating"
+                                min="1"
+                                max="5"
+                                step="0.1"
+                            />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                            Stock Status
+                            <input
+                                name="stockStatus"
+                                value={formData.stockStatus}
+                                onChange={handleChange}
+                                type="number"
+                                className="grow"
+                                placeholder="Enter Available Quantity"
+                            />
+                        </label>
+                    </div>
 
-                    <button type="submit" className="btn bg-green-600 w-full text-white">
+                    <button type="submit" className="btn text-xl hover:bg-green-800 bg-green-600 w-1/6 text-white">
                         Submit
                     </button>
                 </form>
