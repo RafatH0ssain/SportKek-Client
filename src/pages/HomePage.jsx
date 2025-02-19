@@ -65,7 +65,7 @@ const HomePage = () => {
 
                 {/* Sports Categories */}
                 <div className="sports-categories py-10 px-4 bg-gray-100 mx-auto w-11/12">
-                    <h2 className="text-2xl font-bold text-left mb-6">Sports Equipment Categories Currently Available At Our Shop:</h2>
+                    <h2 className="text-2xl font-bold text-left mb-6">Categories:</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-around">
                         {categories.map((category, index) => (
                             <div

@@ -64,7 +64,7 @@ const AddEquipment = () => {
         <div>
             <Header />
             <div className="bg-gray-100 pb-10">
-                <form className="space-y-4 w-3/4 mx-auto py-5" onSubmit={handleSubmit}>
+                <form className="space-y-6 w-11/12 md:w-3/4 mx-auto py-5" onSubmit={handleSubmit}>
                     <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-black underline">
                         Add an Equipment:
                     </h1>
@@ -117,8 +117,8 @@ const AddEquipment = () => {
                         />
                     </label>
 
-                    <div className="flex justify-between gap-5">
-                        <label className="input input-bordered flex items-center gap-2 bg-white w-1/2 border-black">
+                    <div className="flex flex-col md:flex-row justify-between gap-5">
+                        <label className="input input-bordered flex items-center gap-2 bg-white w-full md:w-1/2 border-black">
                             Customization
                             <input
                                 name="customization"
@@ -129,7 +129,7 @@ const AddEquipment = () => {
                                 placeholder="e.g., Extra grip, Hit paper"
                             />
                         </label>
-                        <label className="input input-bordered flex items-center gap-2 w-1/2 bg-white border-black">
+                        <label className="input input-bordered flex items-center gap-2 w-full md:w-1/2 bg-white border-black">
                             Processing Time
                             <input
                                 name="processingTime"
@@ -142,8 +142,8 @@ const AddEquipment = () => {
                         </label>
                     </div>
 
-                    <div className="flex gap-5 justify-between">
-                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                    <div className="flex flex-col md:flex-row gap-5 justify-between">
+                        <label className="input input-bordered flex items-center gap-2 w-full md:w-1/3 bg-white border-black">
                             Price
                             <input
                                 name="price"
@@ -154,7 +154,7 @@ const AddEquipment = () => {
                                 placeholder="Enter Price"
                             />
                         </label>
-                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                        <label className="input input-bordered flex items-center gap-2 w-full md:w-1/3 bg-white border-black">
                             Rating
                             <input
                                 name="rating"
@@ -168,7 +168,7 @@ const AddEquipment = () => {
                                 step="0.1"
                             />
                         </label>
-                        <label className="input input-bordered flex items-center gap-2 w-1/3 bg-white border-black">
+                        <label className="input input-bordered flex items-center gap-2 w-full md:w-1/3 bg-white border-black">
                             Stock Status
                             <input
                                 name="stockStatus"
@@ -181,10 +181,11 @@ const AddEquipment = () => {
                         </label>
                     </div>
 
-                    <button type="submit" className="btn text-xl hover:bg-green-800 bg-green-600 w-1/6 text-white">
+                    <button type="submit" className="btn text-lg md:text-xl hover:bg-green-800 bg-green-600 w-full md:w-1/6 text-white mx-auto">
                         Submit
                     </button>
                 </form>
+
             </div>
             <Footer />
         </div>

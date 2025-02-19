@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContactUs = () => {
     return (
-        <div className="bg-gray-100 text-black py-12 w-11/12 mx-auto">
+        <div className="bg-gray-100 text-black py-12 pb-20 w-11/12 mx-auto">
             <div className="container mx-auto px-4">
                 {/* Heading */}
                 <h1 className="text-4xl font-bold text-center mb-6">
@@ -32,7 +32,7 @@ const ContactUs = () => {
                                 <input
                                     type="text"
                                     id="name"
-                                    className="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="Your Name"
                                 />
                             </div>
@@ -46,7 +46,7 @@ const ContactUs = () => {
                                 <input
                                     type="email"
                                     id="email"
-                                    className="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="Your Email"
                                 />
                             </div>
@@ -60,7 +60,7 @@ const ContactUs = () => {
                                 <textarea
                                     id="message"
                                     rows="5"
-                                    className="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="Your Message"
                                 ></textarea>
                             </div>
@@ -75,7 +75,7 @@ const ContactUs = () => {
 
                     {/* Contact Information */}
                     <div id="contact-us my-10">
-                        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+                        <h2 className="text-2xl font-bold my-8">Get in Touch</h2>
                         <p className="text-gray-900 mb-6">
                             Have questions or need support? Feel free to contact us using the
                             details below.

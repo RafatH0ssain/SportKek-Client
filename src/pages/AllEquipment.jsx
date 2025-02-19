@@ -41,7 +41,8 @@ const AllEquipment = () => {
                             <tbody>
                                 {equipments.map((equipment) => (
                                     <tr key={equipment._id} className="border-b">
-                                        <td className="px-4 py-2">{equipment.itemName}</td>
+                                        <td className="px-4 py-2 flex items-center"><img src={equipment.image} alt={equipment.itemName} className="w-12 h-12 rounded-md mr-5" />
+                                            {equipment.itemName}</td>
                                         <td className="px-4 py-2">{equipment.categoryName}</td>
                                         <td className="px-4 py-2">{equipment.price} USD</td>
                                         <td className="px-4 py-2">

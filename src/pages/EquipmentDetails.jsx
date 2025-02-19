@@ -33,31 +33,24 @@ const EquipmentDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white text-black p-8">
+        <div className="min-h-screen bg-gray-100 text-black">
             <Header />
-            <div className="max-w-5xl mx-auto my-10">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                    <img
-                        src={`${equipment.image}`}
-                        alt={equipment.itemName}
-                        className="w-full md:w-1/2 rounded-lg shadow-lg bg-white"
-                    />
-                    <div className="md:w-1/2">
-                        <h2 className="text-4xl font-bold mb-4">{equipment.itemName}</h2>
-                        <p className="text-gray-400"><strong>Category:</strong> {equipment.categoryName}</p>
-                        <p className="text-gray-400"><strong>Price:</strong> ${equipment.price}</p>
-                        <p className="text-gray-400"><strong>Rating:</strong> {equipment.rating} ⭐</p>
-                        <p className="text-gray-400"><strong>Description:</strong> {equipment.description}</p>
-                        <p className="text-gray-400"><strong>Customization:</strong> {equipment.customization}</p>
-                        <p className="text-gray-400"><strong>Processing Time:</strong> {equipment.processingTime}</p>
-                        <p className="text-gray-400"><strong>Stock Status:</strong> {equipment.stockStatus > 0 ? `${equipment.stockStatus} in stock` : "Out of stock"}</p>
-                        <p className="text-gray-400"><strong>Added by:</strong> {equipment.userName} (<a href={`mailto:${equipment.userEmail}`} className="text-blue-400 hover:underline">{equipment.userEmail}</a>)</p>
-                    </div>
-                </div>
-                <div className="mt-8 text-center">
-                    <button className="px-6 py-2 bg-blue-600 hover:bg-blue-800 rounded-lg font-semibold text-white shadow-md transition">
-                        Add to Cart
-                    </button>
+            <div className="md:max-w-6xl max-w-sm mx-auto my-10 mb-20 flex flex-col md:flex-row items-center gap-8">
+                <img
+                    src={`${equipment.image}`}
+                    alt={equipment.itemName}
+                    className="w-full md:w-1/2 rounded-lg shadow-xl bg-gray-100"
+                />
+                <div className="md:w-1/2">
+                    <h2 className="text-4xl font-bold mb-4">{equipment.itemName}</h2>
+                    <p className="text-gray-800"><strong>Category:</strong> {equipment.categoryName}</p>
+                    <p className="text-gray-800"><strong>Price:</strong> ${equipment.price}</p>
+                    <p className="text-gray-800"><strong>Rating:</strong> {equipment.rating} ⭐</p>
+                    <p className="text-gray-800"><strong>Description:</strong> {equipment.description}</p>
+                    <p className="text-gray-800"><strong>Customization:</strong> {equipment.customization}</p>
+                    <p className="text-gray-800"><strong>Processing Time:</strong> {equipment.processingTime}</p>
+                    <p className="text-gray-800"><strong>Stock Status:</strong> {equipment.stockStatus > 0 ? `${equipment.stockStatus} in stock` : "Out of stock"}</p>
+                    <p className="text-gray-800"><strong>Added by:</strong> {equipment.userName} (<a href={`mailto:${equipment.userEmail}`} className="text-blue-400 hover:underline">{equipment.userEmail}</a>)</p>
                 </div>
             </div>
             <Footer />

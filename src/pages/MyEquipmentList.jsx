@@ -38,7 +38,7 @@ const MyEquipmentList = () => {
     return (
         <div>
             <Header />
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 justify-around py-10">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 justify-around py-20 bg-gray-100">
                 {equipments.length > 0 ? (
                     equipments.map((equipment) => (
                         <MyEquipmentCard
@@ -48,7 +48,7 @@ const MyEquipmentList = () => {
                         />
                     ))
                 ) : (
-                    <p>No equipment available at the moment.</p>
+                    <p className="mx-auto text-xl">Add a new equipment to see it here.</p>
                 )}
             </div>
             <Footer />

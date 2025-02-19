@@ -5,12 +5,11 @@ const AboutUs = () => {
         <div className="bg-gray-100 py-12" id="about-us">
             <div className="container mx-auto px-4">
                 {/* Heading */}
-                <h1 className="text-5xl font-extrabold text-center mt-10 text-black mb-6">
+                <h1 className="text-4xl font-extrabold text-center mt-10 text-black mb-6">
                     About Us
                 </h1>
                 <p className="text-lg text-center text-gray-700 mb-10">
-                    Welcome to <span className="font-semibold">SportKek</span> – Your
-                    one-stop online store for all sports enthusiasts!
+                    Welcome to <span className="font-semibold">SportKek</span> – The ultimate platform for employees to manage their inventory effortlessly!
                 </p>
 
                 {/* Mission and Vision Section */}
@@ -19,10 +18,7 @@ const AboutUs = () => {
                     <div className="bg-white shadow-lg rounded-xl p-6">
                         <h2 className="text-2xl font-bold text-black mb-4">Our Mission</h2>
                         <p className="text-gray-600">
-                            At <span className="font-semibold">SportKek</span>, we are dedicated
-                            to inspiring and empowering athletes and sports enthusiasts around
-                            the globe. We aim to deliver the highest quality equipment and
-                            apparel, ensuring every customer can achieve their best performance.
+                            At <span className="font-semibold">SportKek</span>, our mission is to empower employees by providing a seamless and efficient way to track, manage, and organize their sports equipment. We aim to create a dynamic platform where employees can easily manage their inventory and stay connected with the admin team for any needs or updates.
                         </p>
                     </div>
 
@@ -30,10 +26,7 @@ const AboutUs = () => {
                     <div className="bg-white shadow-lg rounded-xl p-6">
                         <h2 className="text-2xl font-bold text-black mb-4">Our Vision</h2>
                         <p className="text-gray-600">
-                            We envision a world where everyone has access to premium sports gear
-                            and the opportunity to excel in their chosen discipline. Our goal is
-                            to make quality sports equipment accessible, affordable, and
-                            impactful for athletes at every level.
+                            We envision a platform where employees can effortlessly track their items, contact the admin in real-time for support, and stay up-to-date with their sports gear. Our goal is to streamline the experience through real-time APIs, Firebase authentication, and a dynamic Node.js-based platform that caters to employees’ needs.
                         </p>
                     </div>
                 </div>
@@ -44,16 +37,14 @@ const AboutUs = () => {
                         Why Choose SportKek?
                     </h2>
                     <p className="text-lg text-gray-600">
-                        Since our inception in 2023, <span className="font-semibold">SportKek</span> has
-                        been committed to redefining the online sports shopping experience. We
-                        offer:
+                        Since our launch in 2024, <span className="font-semibold">SportKeK</span> has been designed as a dynamic platform for employees to manage their inventory, with features such as:
                     </p>
                     <ul className="mt-6 space-y-4 text-left w-5/6 mx-auto text-gray-700">
-                        <li>✅ A vast collection of premium sports accessories and apparel.</li>
-                        <li>✅ Personalized customer service to meet your unique needs.</li>
-                        <li>✅ Affordable pricing and exciting discounts.</li>
-                        <li>✅ Fast and reliable shipping, ensuring you’re always game-ready.</li>
-                        <li>✅ An easy-to-use platform tailored for athletes of all levels.</li>
+                        <li>✅ A dynamic, real-time system to track your sports equipment and items.</li>
+                        <li>✅ Firebase authentication for secure and easy user login.</li>
+                        <li>✅ Real-time communication with admins via our contact page.</li>
+                        <li>✅ Node.js and MongoDB backend to handle data efficiently and securely.</li>
+                        <li>✅ A user-friendly platform built with ReactJS and Tailwind CSS for a smooth experience.</li>
                     </ul>
                 </div>
             </div>
